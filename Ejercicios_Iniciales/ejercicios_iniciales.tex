@@ -1,0 +1,216 @@
+% 	TEMPLATE DE RELACIÓN DE EJERCICIOS
+%
+% Creador: Juamagdev
+
+% ------------------------------------------------------------------
+% ---------------------- Package imports ---------------------------
+% ------------------------------------------------------------------
+\documentclass[11pt, a4paper]{exam}
+\usepackage[utf8]{inputenc}		% UTF-8
+\usepackage[spanish]{babel}		% Idioma
+\usepackage{graphicx}			% Para importar gráficos
+\usepackage{amsthm, amsfonts, amssymb, amssymb} % Todos los paquetes AMS
+\usepackage{mathtools}          % Arregla bugs de AMS
+\usepackage{hyperref}			% Para \href{URL}{text}
+\usepackage{enumitem}			% Para enumerar
+\usepackage{color} 				% Para definir colores nuevos
+\usepackage{lastpage}			% Para \pageref{LastPage}
+\usepackage{booktabs}					% Tablas profesionales
+\usepackage{parskip}					% Espacio de párrafos
+\usepackage[sharp]{easylist}			% Para litas
+\usepackage[expansion=false]{microtype} % Soluciona bugs de tipografias
+\usepackage[margin=2.25cm, includehead, includefoot]{geometry}
+\usepackage{cancel}
+\usepackage{pgfplots}
+\usepackage{listings}
+
+
+
+% ------------------------------------------------------------------
+% ---------------------- Constantes --------------------------------
+% ------------------------------------------------------------------
+% Las constantes mas importantes
+\newcommand{\mytitle}{Ejercicios iniciales}
+\newcommand{\mysubject}{Algoritmia y Complejidad}
+\newcommand{\mydate}{\today}
+\newcommand{\myauthor}{Grupo 04}
+
+% Redefinir para cada caso
+\newcommand{\myrhead}{Universidad de Málaga}
+\newcommand{\mypagename}{Página}
+\newcommand{\mycreated}{Creado por: }
+\newcommand{\mysolname}{Solución}
+\renewcommand{\solutiontitle}{\noindent\textbf{\mysolname.}\hspace{0.75em}}
+\pointpoints{point}{points}
+
+\providecommand{\abs}[1]{\lvert#1\rvert}
+
+% ------------------------------------------------------------------
+% ---------------------- Ajustes -----------------------------------
+% ------------------------------------------------------------------
+% \shadedsolutions
+\printanswers % Alternative: \noprintanswers, \printanswers
+%\rhead{{\scshape {\footnotesize  \myrhead}}}
+%\cfoot{\mypagename \enspace \thepage}
+\definecolor{SolutionColor}{rgb}{0.8,0.9,1} % light blue
+
+% Cabeceras y pie de página
+\runningfootrule
+\firstpagefootrule
+\firstpagefooter{\mysubject}{}{\mypagename\ \thepage\ de \pageref*{LastPage}}
+\runningfooter{\mysubject}{}{\mypagename\ \thepage\ de \pageref*{LastPage}}
+\runningheader{}{}{\includegraphics[width = 3 cm]{figs/logo.pdf}}
+\firstpageheadrule
+\firstpageheader{\mydate}{\mytitle}{\pageref*{LastPage} páginas en total}
+
+% Answer command for double lines
+\def\answer#1{\underline{\underline{#1}}}
+
+% ------------------------------------------------------------------
+% ---------------------- Documento ---------------------------------
+% ------------------------------------------------------------------
+\begin{document}
+\pagestyle{headandfoot}
+\noindent {\scshape \Large  \mytitle
+    \ifprintanswers
+        \enspace (\mysolname	 )
+    \fi
+} \\
+\noindent {\mycreated \enspace  \myauthor} \vspace{1em}
+\hrule \hrule
+\vspace{5mm}
+
+\newcommand*{\codesetfont}{\fontfamily{pcr}\selectfont}
+\newcommand{\X}[1]{\text{\codesetfont X#1}}
+\newcommand{\WHILE}{\text{WHILE}}
+\newcommand{\dokw}{\text{ \codesetfont do }}
+\newcommand{\od}{\text{ \codesetfont od}}
+\newcommand{\while}{\text{\codesetfont while }}
+
+
+% ------------------------------------------------------------------
+% ---------------------- Contenido ---------------------------------
+% ------------------------------------------------------------------
+
+\begin{questions}
+    \addpoints
+    \question {\bfseries Ejercicio 4}
+    
+    \begin{parts}
+        \part Abstracción para obtener propiedades genéricas; por encima de los detalles.
+        \begin{solution}
+            \\
+            La abstracción es el proceso de generalizar al reducir el contenido de información de un concepto o un fenómeno observable. 
+            Consiste en captar las características esenciales de un objeto, así como su comportamiento, ignorando otras propiedades del objeto en cuestión.
+            La abstracción es una habilidad esencial para la construcción de modelos y la descomposición de problemas.
+            \\
+            \\
+            La abstracción sirve para la formación del conocimiento humano, ya que permite crear conceptos abstractos a partir de la observación de la realidad.
+            También sirve para aspectos informaticos, como la programación orientada a objetos, ya que permite separar el comportamiento específico de un objeto y enfocarse en su visión externa.
+            La abstracción facilita el análisis y la comprensión de los fenómenos, sistemas o procesos.
+            \\
+            \\
+            Algunos ejemplos de abstracción son:
+            \begin{enumerate}
+                \item Representar objetos cotidianos con palabras o imágenes.
+                \item Elaborar definiciones de conceptos como la democracia o la justicia.
+                \item Diagnosticar una enfermedad a partir de los síntomas de un paciente.
+                \item Identificar el problema de un vehículo a partir de los sonidos o las señales que emite.
+                \item Clasificar animales según sus características comunes.
+                
+            \end{enumerate}
+
+        \end{solution}
+
+        \part Lenguaje WHILE
+            
+        \begin{solution}
+            \\
+            El lenguaje WHILE es un lenguaje de programación simple construido a partir de asignaciones
+            , composición secuencial, condicionales y sentencias while. 
+            Es un lenguaje imperativo simple con variables enteras y expresiones enteras y booleanas. 
+            Para ramificación tiene una declaración if-else y para bucle tiene una declaración while.
+            \\
+            \\
+            El lenguaje WHILE es Turing computable, lo que significa que puede resolver cualquier problema que pueda 
+            ser resuelto por una máquina de Turing.
+            En teoría, esto significa que el lenguaje WHILE puede resolver cualquier problema computable. Sin embargo, en la práctica, algunos problemas pueden ser muy difíciles de resolver con el lenguaje WHILE debido a limitaciones de tiempo y espacio. 
+            \\
+            \\
+            La definición formal del lenguaje WHILE es la siguiente:
+            \\
+            \\
+            Dados los alfabetos:\\
+            $\Sigma_w = \{\X{}, \coloneqq, 1, +, -, \while, \neq, 0, \dokw, \od, ;\}$\\
+            $\Sigma_d = \{0,1,2,3,4;5,6,7,8,9\}$\\
+
+            % \begin{tabular}{ l l l l l}
+                Sea $G = (N, T, P, <\text{code}>)$ una gramática con:\\ \\
+                
+                $N = \{$$<\text{number}>, <\text{firstdigit}>, <\text{restnumber}>, <\text{digit}>,$\\
+                        $<\text{code}>,<\text{sentence}>,<\text{assignment}>,<\text{loop}>,<\text{id}>\}$\\
+                $T = $  $ \Sigma_d \cup \Sigma_w$\\
+                $P = \{$\\
+            % \end{tabular}\\
+
+            \begin{tabular}{ l l l l l }
+                      &    &$<\text{number}>    $ & $\rightarrow$ & $<\text{firstdigit}>|<\text{firstdigit}> <\text{restnumber}>,$\\
+                      &    &$<\text{firstdigit}>$ & $\rightarrow$ & $1| 2| 3| 4| 5| 6| 7| 8| 9,$\\
+                      &    &$<\text{digit}>     $ & $\rightarrow$ & $0| 1| 2| 3| 4| 5| 6| 7| 8| 9,$\\
+                      &    &$<\text{restnumber}>$ & $\rightarrow$ & $<\text{digit}>|<\text{digit}><\text{restnumber}>,$\\
+                      &    &$<\text{code}>      $ & $\rightarrow$ & $<\text{sentence}>|<\text{code}>;<\text{sentence}>,$\\
+                      &    &$<\text{sentence}>  $ & $\rightarrow$ & $<\text{assignment}>|<\text{loop}>,$\\
+                      &    &$<\text{id}>        $ & $\rightarrow$ & $\X{} <\text{number}>,$\\
+                      &    &$<\text{loop}>      $ & $\rightarrow$ & $\while <\text{id}>  \not = 0 \; \dokw <\text{code}> \od,$
+            \end{tabular}\\
+            \begin{tabular}{ l l l l l l }
+                      &    &$<\text{assignment}>$ & $\rightarrow$ & $<\text{id}> \coloneqq 0              $ & $|<\text{id}> \coloneqq <\text{id}>|$\\
+                      &    &                      &               & $<\text{id}> \coloneqq <\text{id}> + 1$ & $|<\text{id}> \coloneqq <\text{id}> - 1\}$\\
+            \end{tabular}
+            
+            $\}$
+        
+        \end{solution}
+
+        \part Para un programa $P$, con entrada $X1=n$ que calcula la función $H(n)$ y tiene complejidad
+$T(n)$, dar una relación entre $H(n)$ y $T(n)$.
+        \begin{solution}
+        \end{solution}
+    \end{parts}
+
+    \question {\bfseries Ejercicio en la olimpiada matemática 2022
+    \begin{enumerate}
+        \item Es la hora de comer en el zoo y los animales se ponen en cola a la espera
+        de que abran el comedor. Pero hoy están tardando en abrir y el hambre
+        aprieta. Los animales se han situado en una improvisada cola, cumpliendo
+        el distanciamiento de metro y medio y nadie los ha ordenado para evitar
+        que, como consecuencia del hambre, se coman unos a otros.
+        \item En este zoo, un animal se puede comer a otro de un tamaño hasta D
+        centímetros (cm) inferior. Así, si D = 2, un animal que mida 14 cm puede
+        comerse a otro de 13 cm o 12 cm, pero no a animales de 11 cm o menos.
+        No podría comerse a animales de su mismo tamaño o superior.
+        \item Cuando un animal se come a otro, ocupa la posición en la cola del animal
+        que ha sido devorado y el resto de la cola se compacta volviendo todos al
+        distanciamiento de metro y medio.
+        \item La naturaleza es sabia pero cuando tiene hambre pierde las formas, así que
+        los animales se comerán unos a otros en el orden en el que finalmente
+        queden menos animales vivos.
+        \item  Queremos saber cuántos animales sobrevivirán después de esta larga
+        espera. Pensad en una solución por fuerza bruta. No hay que implementar
+        la solución, bastará con describirla. ¿Cuánto tiempo se tardará en
+        encontrar la solución si hay n animales?
+    \end{enumerate}    
+    }
+    \begin{solution}
+            
+    \end{solution}
+
+\end{questions}
+
+
+
+%\hrule
+%\subsection*{For retting}
+%Ikke skriv noe her. \par \noindent
+%\gradetable[h][questions]	
+\end{document}
