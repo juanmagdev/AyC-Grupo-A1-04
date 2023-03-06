@@ -175,6 +175,38 @@
         \part Para un programa $P$, con entrada $X1=n$ que calcula la función $H(n)$ y tiene complejidad
 $T(n)$, dar una relación entre $H(n)$ y $T(n)$.
         \begin{solution}
+            \\
+            Dado un programa $P$ el cual calcula la función $H(n)$, con entrada $X1$, tiene complejidad $T(n)$, es decir, interpretando $P$ como un algoritmo, $O(P)=T(n)$. Debido a la ambigüedad del enunciado, nos vemos obligados a considerar dos casos:
+            \begin{enumerate}
+                \item El programa $P$ calcula única y exclusivamente la función $H(n)$, es decir, escribiendo dicho prorgama en EXWHILE:
+                \\
+                \\
+                P = (H(n))
+                \\
+                \\
+                Ahora bien, como $P = H(n)$, entonces $O(P) = O(H(n))$, por lo que $O(P) = T(n)$ y la complejidad temporal de P es $T(n)$. 
+                \\
+                \\
+                Veamos esto anterior para un ejemplo, en el que la función $H(n) = n!$, es decir, $P$ es el programa que calcular el factorial de un número. Se puede comprobar que $T(n) = n$, o lo que es lo mismo, $O(P) = n$. 
+                \\
+                \\
+                Esto es un claro ejemplo de que si estamos trabajando en este programa y tenemos una complejidad temporal superior; es decir, nuestro programa hace algunas iteraciones más, podemos concluir que hemos cometido algún error.
+
+                \item El programa $P$ calcula en su interior la función $H(n)$, pero este puede realizar algunas operaciones más.
+                \\
+                \\
+                En este caso, $P \neq H(n)$, pero $O(P) = T(n)$, por lo que $O(P) = T(n)$ por el propio enunciado. Solo que ahora, podría suceder que $P$ tuviera bucles anidados que hicieran que la complejidad de $P$ aumentara. Por ejemplo, sea $P$ un programa que calcula $(n!)^n$, y $H(n) = n!$, la misma función del ejercicio anterior. Es claro que $P$ calcula $H(n)$ en su interior. 
+                \\
+                \\
+                Sin embargo, se puede demostrar que la complejidad de $P$ es $O(nlog(n))$, por tanto, la relación que se obtiene es:
+                \begin{equation*}
+                    O(P) = T(n) \geq O(H(n))  
+                \end{equation*}
+            \end{enumerate} 
+
+
+
+
         \end{solution}
     \end{parts}
 
