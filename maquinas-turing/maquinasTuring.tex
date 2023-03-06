@@ -33,7 +33,7 @@
 \newcommand{\mytitle}{Ejercicio Máquina de Turing M4}
 \newcommand{\mysubject}{Algoritmia y Complejidad}
 \newcommand{\mydate}{\today}
-\newcommand{\myauthor}{Juan Manuel García Delgado}
+\newcommand{\myauthor}{Juan Manuel García Delgado, Alberto Sánchez Muñoz}
 
 % Redefinir para cada caso
 \newcommand{\myrhead}{Universidad de Málaga}
@@ -161,7 +161,7 @@
             Si la cadena es aceptada, la MT se detiene mostrando la cadena sin alterar, siempre en el último $\#$. En caso de rechazarla, esto se puede dar en un paso intermedio y por tanto puede detenerse mostrando en la cinta caracteres que pertenecen al lenguaje de cinta pero no el de input.
             \\
             \\
-            La complejidad del algoritmo usado en esta MT es $O(T(n)) = n^3$, pues dispone de tres bucles anidados que, a lo sumo, recorren la cadena entera (de longitud $n$). Uno de ellos es el empleado para comparar los caracteres de cada subcadena, y los otros dos bucles son usados para recorrer cada pareja de subcadenas dos a dos.
+            La complejidad del algoritmo usado en esta MT es $O(T(n)) = n^3$, pues dispone de tres bucles anidados que, a lo sumo, recorren la cadena entera (de longitud $n$). Uno de ellos es el empleado para comparar los caracteres dentro de cada subcadena. Los otros dos bucles son usados para recorrer cada pareja de subcadenas dos a dos, uno que para cada $\&$, itera el puntero $\$$, y otro que itera directamente el puntero $\&$.
             \\
             \\
             \includegraphics[width = 15 cm]{figs/M4Unicinta.png}
