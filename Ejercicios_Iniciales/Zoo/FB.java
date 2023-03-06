@@ -1,4 +1,4 @@
-package Trabalho;
+package Trabajo
 
 public class Zoo {
 	
