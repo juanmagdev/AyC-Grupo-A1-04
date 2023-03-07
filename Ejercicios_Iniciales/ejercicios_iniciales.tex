@@ -105,7 +105,7 @@
             \\
             \\
             La abstracción sirve para la formación del conocimiento humano, ya que permite crear conceptos abstractos a partir de la observación de la realidad.
-            También sirve para aspectos informaticos, como la programación orientada a objetos, ya que permite separar el comportamiento específico de un objeto y enfocarse en su visión externa.
+            También sirve para aspectos informáticos, como la programación orientada a objetos, ya que permite separar el comportamiento específico de un objeto y enfocarse en su visión externa.
             La abstracción facilita el análisis y la comprensión de los fenómenos, sistemas o procesos.
             \\
             \\
@@ -177,7 +177,7 @@ $T(n)$, dar una relación entre $H(n)$ y $T(n)$.
             \\
             Dado un programa $P$ el cual calcula la función $H(n)$, con entrada $X1$, tiene complejidad $T(n)$, es decir, interpretando $P$ como un algoritmo, $O(P)=T(n)$. Debido a la ambigüedad del enunciado, nos vemos obligados a considerar dos casos:
             \begin{enumerate}
-                \item El programa $P$ calcula única y exclusivamente la función $H(n)$, es decir, escribiendo dicho prorgama en EXWHILE:
+                \item El programa $P$ calcula única y exclusivamente la función $H(n)$, es decir, escribiendo dicho programa en EXWHILE:
                 \\
                 \\
                 P = (H(n))
@@ -197,12 +197,14 @@ $T(n)$, dar una relación entre $H(n)$ y $T(n)$.
                 En este caso, $P \neq H(n)$, pero $O(P) = T(n)$, por lo que $O(P) = T(n)$ por el propio enunciado. Solo que ahora, podría suceder que $P$ tuviera bucles anidados que hicieran que la complejidad de $P$ aumentara. Por ejemplo, sea $P$ un programa que calcula $(n!)^n$, y $H(n) = n!$, la misma función del ejercicio anterior. Es claro que $P$ calcula $H(n)$ en su interior. 
                 \\
                 \\
+                \\
                 Sin embargo, se puede demostrar que la complejidad de $P$ es $O(nlog(n))$, por tanto, la relación que se obtiene es:
                 \begin{equation*}
                     O(P) = T(n) \geq O(H(n))  
                 \end{equation*}
+                \\
             \end{enumerate} 
-
+            
 
 
 
@@ -233,11 +235,8 @@ $T(n)$, dar una relación entre $H(n)$ y $T(n)$.
     \end{enumerate}    
     }
     \begin{solution}
+        \\
             \textbf{FUERZA BRUTA} 
-            \\
-            \\
-            \\
-            \\
             \\
             \\
             Existe una versión programada  y vamos a proceder a explicarla
@@ -277,6 +276,8 @@ $T(n)$, dar una relación entre $H(n)$ y $T(n)$.
             
     \end{solution}
     
+    Puede encontrar la presentación del ejercicio 4, realizada en clase en             \href{https://docs.google.com/presentation/d/1r6FI3wsCIXxYozxNeoR2K6Ct4r2eQmplCFJDrkbXZK4/edit?usp=sharing}{\color{blue}{este enlace}}. 
+    Además, puede encontrar los códigos del ejercicio 4 en nuestro repositorio de GitHub: \url{https://github.com/juanmagdev/AyC-Grupo-A1-04}
 
 \end{questions}
 
