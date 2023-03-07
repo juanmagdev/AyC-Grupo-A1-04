@@ -108,7 +108,16 @@
                 \item La cadena $\#\#1\#0$ es válida (la cadena vacía se encuentra una vez)
                 \item La cadena $\#\#1\#0\#$ no es válida (la cadena vacía se encuentra dos veces)
             \end{enumerate}
-
+            La máquina de Turing se define sobre los alfabetos:
+            \begin{equation*}
+                \Gamma = \left\lbrace \#,0,1 \right\rbrace
+            \end{equation*}
+            \begin{equation*}
+                \Sigma = \left\lbrace \#,0,1 \right\rbrace
+            \end{equation*}
+            que son los mismos, ya que en esta versión multicinta no es necesario añadir símbolos extras.
+            \\
+            \\
             La máquina de Turing tendrá 2 cintas, en la primera de ellas se pondrá la cadena para ser reconocida, en la segunda es donde se comprobará que no hay cadenas, escribiendo la primera cadena y comparando uno a uno cada elemento. Para ello la má
             quina realiza los siguientes pasos:
             \begin{enumerate}
