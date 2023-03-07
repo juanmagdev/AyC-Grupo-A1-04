@@ -59,7 +59,6 @@
 \firstpagefootrule
 \firstpagefooter{\mysubject}{}{\mypagename\ \thepage\ de \pageref*{LastPage}}
 \runningfooter{\mysubject}{}{\mypagename\ \thepage\ de \pageref*{LastPage}}
-\runningheader{}{}{\includegraphics[width = 3 cm]{figs/logo.pdf}}
 \firstpageheadrule
 \firstpageheader{\mydate}{\mytitle}{\pageref*{LastPage} páginas en total}
 
@@ -234,8 +233,50 @@ $T(n)$, dar una relación entre $H(n)$ y $T(n)$.
     \end{enumerate}    
     }
     \begin{solution}
+            \textbf{FUERZA BRUTA} 
+            \\
+            \\
+            \\
+            \\
+            \\
+            \\
+            Existe una versión programada  y vamos a proceder a explicarla
+            \\
+            \\
+            Partimos del mencionado array y del entero
+            \\
+            \(Animales[ ] = {7,3,5,4}\)
+            \\
+            \(Alt = 2\)
+
+            \begin{enumerate}
+                \item Recorremos todo el array
+                \item Por cada posición vemos si esta puede comer o no:
+                   \begin{enumerate}
+                      \item Si puede comer, lo hace (se quita el comido del array) y se vuelve a llamar a esta función
+                      \item Si no, no se hace nada
+                   \end{enumerate}
+                \item El algoritmo se queda, de todas las devueltas, con la cadena de menor tamaño
+            \end{enumerate}
+            $Complejidad = O(2^n)$
+            \\
+            \\
+            \\
+            \textbf{VORAZ} 
+
+
+
+            También existe una versión programada de esta.
+                    \begin{enumerate}
+                \item Recorremos todo el array
+                \item Por cada posición vemos cuántos vecinos se puede comer cada uno.
+                \item El que pueda comer más será el elegido y se comerá a sus vecinos.
+                \item Repetimos hasta que nadie pueda comer más
+            \end{enumerate}
+            $Complejidad = O(n^2)$
             
     \end{solution}
+    
 
 \end{questions}
 
