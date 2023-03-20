@@ -141,6 +141,19 @@
             En cuanto a la complejidad de la máquina, se puede ver que esta tiene dos bucles anidados, por tanto, su complejidad es $O(n^2)$, donde $n$ es el número de símbolos de la cadena.
             \\
             \\
+            Para probar esto, definamos que tenemos un total de $n$ palabras, con una longitud $m$ de cada palabra. Es decir, $|w_i| = m, \forall i\in{1, ..., n}$. En concreto, habria un total de $mn + n$ símbolos, (los últimos n corresponden a los simbolos hashtag).
+            \\
+            \\
+            Ahora, despreciando los saltos de palabra y movimientos para cuadrar los hashtag, he iniciar una comparación:
+            \begin{itemize}
+                \item Comparo la primera palabra con todas: $mn$ pasos.
+                \item Comparo la primera palabra con todas y la segunda con todas, menos la primera: $mn + m(n-1)$ pasos.
+                \item Realizando este proceso $n$ veces, se habrán realizado un total de:
+                \begin{equation*}
+                    mn + m(n-1) + m(n-2) + ... + m(1) = mn^2 - (m - 2m - 3m - ... - nm) = mn^2 - k
+                \end{equation*}
+                Por tanto, la complejidad de la máquina es $O(n^2)$. 
+            \end{itemize}
             También puede encontrar todo el código de la máquina usada en el simulador, con los estados y transiciones en el repositorio de \textit{Github}, junto con el autómata generado por JFLAP, dentro de la carpeta de \textit{utilities}:
             \url{https://github.com/juanmagdev/AyC-Grupo-A1-04}
             \\
@@ -150,7 +163,7 @@
             \\
             \\
         \end{solution}
-        
+        \newpage
         \part Unicinta
 
         \begin{solution}
