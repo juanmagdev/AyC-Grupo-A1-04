@@ -171,39 +171,17 @@
         
         \end{solution}
 
-        \part Para un programa $P$, con entrada $X1=n$ que calcula la función $H(n)$ y tiene complejidad
-$T(n)$, dar una relación entre $H(n)$ y $T(n)$.
+        \part Para un programa $P$, con entrada $X1=n$ que calcula la función $H(n)$ con complejidad temporal
+$T(n)$, ¿Cuál sería el máximo resultado que podría devolver?
         \begin{solution}
             \\
-            Dado un programa $P$ el cual calcula la función $H(n)$, con entrada $X1$, tiene complejidad $T(n)$, es decir, interpretando $P$ como un algoritmo, $O(P)=T(n)$. Debido a la ambigüedad del enunciado, nos vemos obligados a considerar dos casos:
-            \begin{enumerate}
-                \item El programa $P$ calcula única y exclusivamente la función $H(n)$, es decir, escribiendo dicho programa en EXWHILE:
-                \\
-                \\
-                P = (H(n))
-                \\
-                \\
-                Ahora bien, como $P = H(n)$, entonces $O(P) = O(H(n))$, por lo que $O(P) = T(n)$ y la complejidad temporal de P es $T(n)$. 
-                \\
-                \\
-                Veamos esto anterior para un ejemplo, en el que la función $H(n) = n!$, es decir, $P$ es el programa que calcular el factorial de un número. Se puede comprobar que $T(n) = n$, o lo que es lo mismo, $O(P) = n$. 
-                \\
-                \\
-                Esto es un claro ejemplo de que si estamos trabajando en este programa y tenemos una complejidad temporal superior; es decir, nuestro programa hace algunas iteraciones más, podemos concluir que hemos cometido algún error.
+            Debido a las restricciones impuestas de tiempo, podemos tener N número de pasos de cómputo.
+            Contamos con asignaciones y bucles. Los bucles no nos sirven pues son siempre de la forma while XN != 0 do o sea  que tenemos que aumentar una variable X2, por ejemplo, para que dentro del bucle esta disminuya y X1 aumente lo cual es absurdo porque estás duplicando un trabajo y perdiendo instrucciones por el camino. La solución pues consiste en usar N veces la asignación X1 = X1 +1 lo cual nos quedaría N + sumatorio de uno a n del número 1 lo cual es N+N = 2N
+            \\
+            \\
+            Esto se ve mucho mejor si usamos máquinas de Turing. Supongamos que en nuestro alfabeto solo poseemos el símbolo "|" (al que llamaremos palo) y el símbolo "\#" (al que llamaremos cadena vacía), en la cinta ya poseemos N palos y la cabeza lectora se encuentra a la derecha de la entrada (porque sino los N pasos nos lo gastamos recorriendo la entrada). Con todo esto, para aumentar el número de palos lo único que podemos hacer es ir hacia la derecha escribiendo palos. Y al dar N pasos y, ya de entrada tener N palos. N+N = 2N
 
-                \item El programa $P$ calcula en su interior la función $H(n)$, pero este puede realizar algunas operaciones más.
-                \\
-                \\
-                En este caso, $P \neq H(n)$, pero $O(P) = T(n)$, por lo que $O(P) = T(n)$ por el propio enunciado. Solo que ahora, podría suceder que $P$ tuviera bucles anidados que hicieran que la complejidad de $P$ aumentara. Por ejemplo, sea $P$ un programa que calcula $(n!)^n$, y $H(n) = n!$, la misma función del ejercicio anterior. Es claro que $P$ calcula $H(n)$ en su interior. 
-                \\
-                \\
-                \\
-                Sin embargo, se puede demostrar que la complejidad de $P$ es $O(nlog(n))$, por tanto, la relación que se obtiene es:
-                \begin{equation*}
-                    O(P) = T(n) \geq O(H(n))  
-                \end{equation*}
-                \\
-            \end{enumerate} 
+
             
 
 
